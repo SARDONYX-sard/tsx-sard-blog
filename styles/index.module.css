@@ -1,0 +1,57 @@
+.container {
+  display: block;
+  color: #fff;
+}
+
+.title {
+  box-sizing: border-box;
+  padding-top: 3vw;
+  padding-right: 0;
+  padding-bottom: 30vw;
+  position: relative;
+  -webkit-transform-style: inherit;
+  transform-style: inherit;
+  width: 100vw;
+}
+.title,
+.title:before {
+  background: 50% 50% / cover;
+  padding-top: calc(50% - 5em);
+  font-size: 4.5vw;
+}
+.title::before {
+  height: 100vh;
+  bottom: 0;
+  content: '';
+  left: -6px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  display: block;
+  background-color: #8a8;
+  background-image: url(http://ksk-soft.com/css_labo/dimg/orengeFlower.jpg);
+  background-size: cover;
+  -webkit-transform-origin: center center 0;
+  -webkit-transform: translateZ(-1px) scale(2);
+  transform-origin: center center 0;
+  transform: translateZ(-1px) scale(2);
+  z-index: -1;
+  min-height: 100vh;
+}
+.title * {
+  font-weight: normal;
+  letter-spacing: 0.2em;
+  text-align: center;
+  margin: 0;
+  padding: 1em 0;
+}
+.title p {
+  background-color: hsla(0, 0%, 100%, 0.1);
+}
+.contents {
+  background-color: hsl(60, 10%, 10%);
+  line-height: 1.7;
+  padding: 5% calc(50% - 13em) 90%;
+  position: relative;
+  z-index: 2;
+}

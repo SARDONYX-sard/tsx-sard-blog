@@ -23,6 +23,7 @@
 .headingMd {
   font-size: 1.2rem;
   line-height: 1.5;
+  transform: translateZ(0px);
 }
 
 .borderCircle {
@@ -48,5 +49,9 @@
 }
 
 .lightText {
+  color: rgb(211, 210, 210);
+}
+
+.darkText {
   color: #666;
 }
