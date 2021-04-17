@@ -7,6 +7,8 @@ import Link from 'next/link'
 import Date from '../components/date'
 import { GetStaticProps } from 'next'
 
+import Footer from '../components/footer'
+
 export default function Home({
   allPostsData,
 }: {
@@ -57,6 +59,8 @@ export default function Home({
           </section>
         </main>
       </div>
+
+      <Footer />
     </>
   )
 }
