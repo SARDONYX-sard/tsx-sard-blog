@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Layout from '../components/layout'
+import FlexSearch from 'flexsearch'
 
 type Props = {
   query: string
@@ -27,9 +28,14 @@ const SearchResult = ({ query, meta }: Props) => {
   )
 }
 
-export async function getServerSideProps(ctx: {}) {
-  const { posts } = await require('../../cache/data')
-  const FlexSearch = require('flexsearch')
+type Context = {
+  query: {
+    q: string
+  }
+}
+
+export async function getServerSideProps(ctx: Context) {
+  const { posts } = await import('../../cache/data')
   const query = ctx.query.q
 
   let index = new FlexSearch({
@@ -45,7 +51,14 @@ export async function getServerSideProps(ctx: {}) {
   await index.add(posts)
 
   const res = await index.search(query)
-  const meta = res.map((r) => ({
+
+  type Response = {
+    id: number
+    data: {
+      title: string
+    }
+  }
+  const meta = res.map((r: Response) => ({
     id: r.id,
     title: r.data.title,
   }))

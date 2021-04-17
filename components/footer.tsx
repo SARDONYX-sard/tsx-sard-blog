@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className={footerStyles.footer_bg}>
       <div className={footerStyles.container}>
-        <Link href='/'>
+        <Link href='/search'>
           <a>&#x1f50d;Search</a>
         </Link>
         <Link href='/'>

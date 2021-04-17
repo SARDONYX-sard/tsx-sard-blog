@@ -1,10 +1,12 @@
 import fs from 'fs'
-const path = require('path')
-const matter = require('gray-matter')
-const glob = require('glob')
-const remark = require(`remark`)
-const strip = require(`strip-markdown`)
-const { tokenize } = require(`kuromojin`)
+import path from 'path'
+import matter from 'gray-matter'
+import glob from 'glob'
+import remark from 'remark'
+import { tokenize } from 'kuromojin'
+import strip from 'strip-markdown'
+
+
 
 const POSTDIRPATH = path.join(process.cwd(), 'src', 'pages', 'posts')
 
@@ -14,8 +16,8 @@ function getAllPosts() {
   return posts
 }
 
-function markdownToText(content) {
-  let text
+function markdownToText(content: string) {
+  let text:any
   remark()
     .use(strip, { keep: ['code'] })
     .process(content, (err, file) => {
@@ -25,7 +27,7 @@ function markdownToText(content) {
   return text
 }
 
-async function filterToken(text) {
+async function filterToken(text: string) {
   const res = await tokenize(text)
   const POS_LIST = [`名詞`, `動詞`, `形容詞`]
   const IGNORE_REGEX = /^[!-/:-@[-`{-~、-〜”’・]+$/
@@ -40,7 +42,7 @@ async function makePostsCache() {
   const filepaths = getAllPosts()
 
   const posts = await Promise.all(
-    filepaths.map(async (filepath) => {
+    filepaths.map(async (filepath: string) => {
       const id = path.parse(filepath).base.replace('.md', '')
       const contents = fs.readFileSync(filepath)
       const matterResult = matter(contents)
