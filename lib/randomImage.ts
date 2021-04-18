@@ -3,7 +3,7 @@ function getRandomInt(max: number): number {
 }
 
 export default function getRandomImg(): string {
-  const imgs = ['daffodils', 'KissingSpring', 'SpringFlower', 'orangeFlower']
+  const imgs = ['daffodils', 'kissingSpring', 'springFlower', 'orangeFlower']
   const index = getRandomInt(imgs.length)
   return imgs[index]
 }

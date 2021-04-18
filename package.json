@@ -5,8 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "cache": "yarn cache-posts && git add cache/data.js"
+    "start": "next start"
   },
   "husky": {
     "hooks": {
