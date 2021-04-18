@@ -9,7 +9,15 @@ import Footer from './footer'
 const name = 'SARDONYX'
 export const siteTitle = 'SARDONYXのブログ'
 
-export default function Layout({ children, home }: { children: React.ReactNode; home?: boolean }) {
+export default function Layout({
+  children,
+  home,
+  about=false,
+}: {
+  children: React.ReactNode
+  home?: boolean
+  about?: boolean
+}) {
   return (
     <>
       <div className={styles.container}>
@@ -61,15 +69,8 @@ export default function Layout({ children, home }: { children: React.ReactNode; 
           )}
         </header>
         <main>{children}</main>
-        {!home && (
-          <div className={styles.backToHome}>
-            <Link href='/'>
-              <a>← Back to home</a>
-            </Link>
-          </div>
-        )}
       </div>
-      <Footer />
+      {!home ? <Footer isHome={home} isAbout={about} /> : <Footer isHome={home} isAbout={about} />}
     </>
   )
 }

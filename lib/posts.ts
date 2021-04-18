@@ -2,6 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import remark from 'remark'
+import highlight from 'remark-highlight.js'
 import html from 'remark-html'
 
 const postsDirectory = path.join(process.cwd(), 'posts')
@@ -56,7 +57,9 @@ export async function getPostData(id: string) {
 
   // Use remark to convert markdown into HTML string
   const processedContent = await remark()
+    .data('settings', { emphasis: '*', strong: '*' })
     .use(html)
+    .use(highlight)
     .process(matterResult.content)
   const contentHtml = processedContent.toString()
 

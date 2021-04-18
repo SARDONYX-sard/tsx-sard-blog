@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Layout, { siteTitle } from '../components/layout'
+import { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
 import index from '../styles/index.module.css'
 import { getSortedPostsData } from '../lib/posts'
@@ -7,6 +7,7 @@ import Link from 'next/link'
 import Date from '../components/date'
 import { GetStaticProps } from 'next'
 
+import getRandomImg from '../lib/randomImage'
 import Footer from '../components/footer'
 
 export default function Home({
@@ -20,6 +21,11 @@ export default function Home({
 }) {
   return (
     <>
+      <style>
+        {`.styles_title__1AK6-::before {
+          background-image: url(/images/${getRandomImg()}.jpg);
+        }`}
+      </style>
       <Head>
         <title>{siteTitle}</title>
 
@@ -36,8 +42,11 @@ export default function Home({
       </Head>
 
       <div className={index.container}>
-        <header className={index.title}>
-          <h1>{siteTitle}</h1>
+        <header
+          className={index.title}
+          // style={{ backgroundImage: `url(/images/${getRandomImg()}.jpg)` }}
+        >
+          <h1 className={index.h1}>{siteTitle}</h1>
           <p>学んだ技術や知識をまとめておく場所</p>
         </header>
         <main className={index.contents}>
@@ -60,7 +69,7 @@ export default function Home({
         </main>
       </div>
 
-      <Footer />
+      <Footer isHome={true} isAbout={false} />
     </>
   )
 }

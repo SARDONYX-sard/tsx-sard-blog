@@ -5,11 +5,12 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "cache": "yarn cache-posts && git add cache/data.js"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn cache-posts && git add cache/data.ts"
+      "pre-commit": "yarn cache-posts && git add cache/data.js"
     }
   },
   "dependencies": {
@@ -31,6 +32,7 @@
     "fs": "^0.0.1-security",
     "glob": "^7.1.6",
     "kuromojin": "^2.1.1",
+    "remark-highlight.js": "^6.0.0",
     "strip-markdown": "^4.0.0",
     "typescript": "^3.8.3"
   }

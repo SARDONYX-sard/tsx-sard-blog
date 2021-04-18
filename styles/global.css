@@ -14,7 +14,7 @@ body {
 }
 
 a {
-  color: #0070f3;
+  color: #60a9ff;
   text-decoration: none;
 }
 
@@ -27,10 +27,7 @@ img {
   display: block;
 }
 
-/* html,
-body {
-  background-color: #FEDCC8;
-} */
+/* ------------------ My custom CSS  ------------------ */
 
 html {
   height: 100%;
@@ -49,4 +46,90 @@ body {
   height: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
+}
+
+pre,
+code {
+  font-family: '游明朝';
+  background-color: #e2ded3;
+  overflow-x: scroll;
+}
+
+th {
+  background-color: rgb(151, 190, 182);
+}
+
+h1 {
+  font-size: 3.2rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.8rem;
+  border-bottom: solid 3px rgb(206, 200, 200);
+}
+
+h3 {
+  margin-left: -0.8rem;
+  font-size: 1rem;
+  position: relative;
+  padding: 0.4em;
+  margin-top: 1.4em ;
+  margin-bottom: 1.4em ;
+  background-color: #7db4e6;
+  color: white;
+}
+
+h3::before {
+  position: absolute;
+  content: '';
+  top: 100%;
+  left: 0;
+  border: none;
+  border-bottom: solid 15px transparent;
+  border-right: solid 20px rgb(149, 158, 155);
+}
+
+h4 {
+  font-size: 1rem;
+  /*文字の上下 左右の余白*/
+  padding: 0.4em 0.5em;
+  /*文字色*/
+  color: #494949;
+  /*左線*/
+  border-left: solid 5px #7db4e6;
+  /*下線*/
+  border-bottom: solid 3px #7db4e6;
+}
+
+h5 {
+  position: relative;
+  border-color: #eee;
+  border-style: solid;
+  border-width: 5px 5px 5px 0;
+  background: #fff;
+  margin: 0 0 15px -15px;
+  padding: 5px 15px;
+  -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+h5::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  bottom: 15px;
+  right: 15px;
+  width: 70%;
+  height: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+  -webkit-transform: rotate(2deg);
+  -moz-transform: rotate(2deg);
+  -o-transform: rotate(2deg);
+  -ms-transform: rotate(2deg);
+  transform: rotate(2deg);
 }

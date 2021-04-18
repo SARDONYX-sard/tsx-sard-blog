@@ -3,6 +3,16 @@
   color: #fff;
 }
 
+.h1 {
+  font-size: 8vw;
+}
+
+@media (min-width: 1280px) {
+  .h1 {
+    font-size: 7rem;
+  }
+}
+
 .title {
   box-sizing: border-box;
   padding-top: 3vw;
@@ -15,11 +25,11 @@
 }
 .title,
 .title:before {
-  background: 50% 50% / cover;
-  padding-top: calc(50% - 5em);
+  background: 58% -11rem;
   font-size: 4.5vw;
 }
 .title::before {
+  padding-top: calc(50% - 5em);
   height: 100vh;
   bottom: 0;
   content: '';
@@ -28,9 +38,10 @@
   right: 0;
   top: 0;
   display: block;
-  background-color: #8a8;
-  background-image: url(http://ksk-soft.com/css_labo/dimg/orengeFlower.jpg);
+  background-color: rgb(24, 24, 24);
+  /* background-image: url(/images/forestFlower.jpg); */
   background-size: cover;
+  background-repeat: no-repeat;
   -webkit-transform-origin: center center 0;
   -webkit-transform: translateZ(-1px) scale(2);
   transform-origin: center center 0;
