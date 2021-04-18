@@ -8,7 +8,10 @@ export default function Home() {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={utilStyles.headingMd}>
+      <main
+        className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}
+        style={{ textAlign: 'center' }}
+      >
         <p>
           モンハン好きの常時腱鞘炎なプログラマ。
           <br />
@@ -19,7 +22,7 @@ export default function Home() {
           <br />
           GitHub： <a href='https://github.com/SARDONYX-sard'>SARDONYX-sard</a>
         </p>
-      </section>
+      </main>
     </Layout>
   )
 }

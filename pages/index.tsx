@@ -21,7 +21,7 @@ export default function Home({
 }) {
   return (
     <>
-      <style>
+      <style jsx>
         {`.styles_title__1AK6-::before {
           background-image: url(/images/${getRandomImg()}.jpg);
         }`}

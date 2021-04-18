@@ -28,6 +28,7 @@
   "devDependencies": {
     "@types/node": "^13.11.0",
     "@types/react": "^16.9.32",
+    "babel-plugin-styled-components": "^1.12.0",
     "flexsearch": "^0.6.32",
     "fs": "^0.0.1-security",
     "glob": "^7.1.6",

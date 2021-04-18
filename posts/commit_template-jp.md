@@ -15,9 +15,15 @@ export default function Date({ dateString }: { dateString: string }) {
 }
 ```
 
+```diff
+ continued line
+-removed line
++added line
+```
+
 ### ==== Prefix ====
 
-fix: バグ修正
+**fix**: バグ修正
 
 feat: 新機能
 

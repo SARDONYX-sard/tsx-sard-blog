@@ -1,71 +1,71 @@
+import Head from 'next/head'
+import Layout, { siteTitle } from '../components/layout'
+import utilStyles from '../styles/utils.module.css'
+import index from '../styles/index.module.css'
+import { getSortedPostsData } from '../lib/posts'
 import Link from 'next/link'
-import Layout from '../components/layout'
-import FlexSearch from 'flexsearch'
+import Date from '../components/date'
+import { GetStaticProps } from 'next'
 
-type Props = {
-  query: string
-  meta: {
-    id: number
+import SearchForm from '../components/search-form'
+
+export default function Home({
+  allPostsData,
+}: {
+  allPostsData: {
+    date: string
     title: string
+    id: string
   }[]
-}
-
-const SearchResult = ({ query, meta }: Props) => {
-  const listitems = meta.map((res, idx) => {
-    const url = `/posts/${res.id}`
-    return (
-      <li key={idx}>
-        <Link href={url}>{res.title}</Link>
-      </li>
-    )
-  })
+}) {
   return (
     <Layout>
-      <h1>Search Results</h1>
-      <h2>Query: {query}</h2>
-      <ul>{listitems}</ul>
+      <Head>
+        <title>{siteTitle}</title>
+
+        <link rel='icon' href='/favicon.ico' />
+        <meta name='description' content='Learn how to build a personal website using Next.js' />
+        <meta
+          property='og:image'
+          content={`https://og-image.vercel.app/${encodeURI(
+            siteTitle
+          )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.zeit.co%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
+        />
+        <meta name='og:title' content={siteTitle} />
+        <meta name='twitter:card' content='summary_large_image' />
+      </Head>
+
+      <div className={index.container}>
+        <main className={index.contents}>
+          <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+            <h2 className={utilStyles.headingLg}>
+
+            </h2>
+            <ul className={utilStyles.list}>
+              {allPostsData.map(({ id, date, title }) => (
+                <li className={utilStyles.listItem} key={id}>
+                  <Link href={`/posts/${id}`}>
+                    <a>{title}</a>
+                  </Link>
+                  <br />
+                  <small className={utilStyles.lightText}>
+                    <Date dateString={date} />
+                  </small>
+                </li>
+              ))}
+            </ul>
+          </section>
+        </main>
+      </div>
     </Layout>
   )
 }
 
-type Context = {
-  query: {
-    q: string
-  }
-}
-
-export async function getServerSideProps(ctx: Context) {
-  const { posts } = await import('../../cache/data')
-  const query = ctx.query.q
-
-  let index = new FlexSearch({
-    tokenize: function (str: string) {
-      return str.split(' ')
-    },
-    doc: {
-      id: 'id',
-      field: ['data:words'],
-    },
-  })
-
-  await index.add(posts)
-
-  const res = await index.search(query)
-
-  type Response = {
-    id: number
-    data: {
-      title: string
-    }
-  }
-  const meta = res.map((r: Response) => ({
-    id: r.id,
-    title: r.data.title,
-  }))
-
+export const getStaticProps: GetStaticProps = async () => {
+  const allPostsData = getSortedPostsData()
   return {
-    props: { query: query, meta: meta },
+    props: {
+      allPostsData,
+    },
   }
 }
-
-export default SearchResult
