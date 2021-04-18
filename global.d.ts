@@ -7,8 +7,3 @@ declare module 'remark-highlight.js' {
   export default highlight
 }
 
-// declare global {
-//   interface Window {
-//     gtag?: (type: string, googleAnalyticsId: string, page_path: { path: string }) => void
-//   }
-// }

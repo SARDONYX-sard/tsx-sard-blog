@@ -7,7 +7,7 @@ import Link from 'next/link'
 import Date from '../components/date'
 import { GetStaticProps } from 'next'
 
-import getRandomImg from '../lib/randomImage'
+import RandomImg from '../components/randomImage'
 import Footer from '../components/footer'
 
 export default function Home({
@@ -21,11 +21,6 @@ export default function Home({
 }) {
   return (
     <>
-      <style jsx>
-        {`.styles_title__1AK6-::before {
-          background-image: url(/images/${getRandomImg()}.jpg);
-        }`}
-      </style>
       <Head>
         <title>{siteTitle}</title>
 
@@ -42,13 +37,8 @@ export default function Home({
       </Head>
 
       <div className={index.container}>
-        <header
-          className={index.title}
-          // style={{ backgroundImage: `url(/images/${getRandomImg()}.jpg)` }}
-        >
-          <h1 className={index.h1}>{siteTitle}</h1>
-          <p>学んだ技術や知識をまとめておく場所</p>
-        </header>
+        <RandomImg siteTitle={siteTitle} />
+
         <main className={index.contents}>
           <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
             <h2 className={utilStyles.headingLg}>最新記事</h2>

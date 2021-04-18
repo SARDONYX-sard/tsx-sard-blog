@@ -39,6 +39,7 @@
   top: 0;
   display: block;
   background-color: rgb(24, 24, 24);
+  /* エラー時の緊急用背景 */
   background-image: url(/images/threeCuteChicks.jpg);
   background-size: cover;
   background-repeat: no-repeat;
