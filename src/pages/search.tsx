@@ -17,24 +17,22 @@ export default function Home({
     id: string
   }[]
 }) {
-  const [text, setText] = useState('')
   const [selectPostsData, setSelectPostsData] = useState(allPostsData)
 
   function handleTextChange(text: string) {
-    setText(text)
-    let reg = new RegExp(text, "gi")
-    console.log(reg);
-
+    let reg = new RegExp(text, 'gi')
+    console.log(reg)
 
     if (text === '') {
       setSelectPostsData(allPostsData)
     } else {
       setSelectPostsData(
         allPostsData.filter(({ id, date, title }) => {
-          return id.match(reg) || date.match(reg) || title.match(reg)
+          return date.match(reg) || title.match(reg)
         })
       )
     }
+    // console.log(selectPostsData)
   }
 
   return (
@@ -54,25 +52,26 @@ export default function Home({
         <meta name='twitter:card' content='summary_large_image' />
       </Head>
 
-      <form>
-        <p>
-          <label>
-            検索：
-            <input
-              type='text'
-              name='name'
-              onChange={(e) => {
-                handleTextChange(e.target.value)
-              }}
-            />
-          </label>
-        </p>
-      </form>
-
       <div className={index.container}>
+        <h1 className={utilStyles.headingMd}>
+          <p>
+            <label>
+              検索：
+              <input
+                className={utilStyles.headingMd}
+                type='text'
+                name='name'
+                onChange={(e) => {
+                  handleTextChange(e.target.value)
+                }}
+              />
+            </label>
+          </p>
+        </h1>
+        <p>月別検索の例：</p>
+        <p>[2020年1月の記事]：2020-01</p>
         <main className={index.contents}>
           <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-            <h2 className={utilStyles.headingLg}></h2>
             <ul className={utilStyles.list}>
               {selectPostsData.map(({ id, date, title }) => (
                 <li className={utilStyles.listItem} key={id}>
