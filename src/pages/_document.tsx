@@ -23,6 +23,11 @@ export default class MyDocument extends Document {
               />
             </>
           )}
+
+          <link
+            href='https://fonts.googleapis.com/css?family=Noto+Serif+JP:400,700&display=swap&subset=japanese'
+            rel='stylesheet'
+          ></link>
         </Head>
         <body>
           <Main />
