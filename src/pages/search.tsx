@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { useState } from 'react'
 import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
 import index from '../styles/index.module.css'
@@ -6,7 +7,6 @@ import { getSortedPostsData } from '../lib/posts'
 import Link from 'next/link'
 import Date from '../components/date'
 import { GetStaticProps } from 'next'
-
 
 export default function Home({
   allPostsData,
@@ -17,6 +17,26 @@ export default function Home({
     id: string
   }[]
 }) {
+  const [text, setText] = useState('')
+  const [selectPostsData, setSelectPostsData] = useState(allPostsData)
+
+  function handleTextChange(text: string) {
+    setText(text)
+    let reg = new RegExp(text, "gi")
+    console.log(reg);
+
+
+    if (text === '') {
+      setSelectPostsData(allPostsData)
+    } else {
+      setSelectPostsData(
+        allPostsData.filter(({ id, date, title }) => {
+          return id.match(reg) || date.match(reg) || title.match(reg)
+        })
+      )
+    }
+  }
+
   return (
     <Layout>
       <Head>
@@ -34,14 +54,27 @@ export default function Home({
         <meta name='twitter:card' content='summary_large_image' />
       </Head>
 
+      <form>
+        <p>
+          <label>
+            検索：
+            <input
+              type='text'
+              name='name'
+              onChange={(e) => {
+                handleTextChange(e.target.value)
+              }}
+            />
+          </label>
+        </p>
+      </form>
+
       <div className={index.container}>
         <main className={index.contents}>
           <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-            <h2 className={utilStyles.headingLg}>
-
-            </h2>
+            <h2 className={utilStyles.headingLg}></h2>
             <ul className={utilStyles.list}>
-              {allPostsData.map(({ id, date, title }) => (
+              {selectPostsData.map(({ id, date, title }) => (
                 <li className={utilStyles.listItem} key={id}>
                   <Link href={`/posts/${id}`}>
                     <a>{title}</a>

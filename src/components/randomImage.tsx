@@ -6,7 +6,7 @@ function getRandomInt(max: number): number {
 }
 
 export default function RandomImg({ siteTitle }: { siteTitle: string }) {
-  const imgs = ['daffodils', 'kissingSpring', 'springFlower', 'orangeFlower']
+  const imgs = ['daffodils', 'kissingSpring', 'springFlower', 'orangeFlower', 'threeCuteChicks']
 
   const [ind, setInd] = useState(0)
 
@@ -15,7 +15,7 @@ export default function RandomImg({ siteTitle }: { siteTitle: string }) {
       setInd(getRandomInt(imgs.length))
     }
   }, [])
-  console.log(imgs[ind])
+  // console.log(imgs[ind])
   return (
     <>
       <style jsx>

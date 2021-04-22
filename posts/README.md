@@ -1,4 +1,9 @@
-# React(Next.js) + TypeScriptで作られたBlog
+---
+title: "当サイトのりどみ"
+date: "2021-04-18"
+---
+
+## React(Next.js) + TypeScriptで作られたBlog
 
 当ブログの公開場所：[tsx-sard-blog](https://tsx-sard-blog.netlify.app/)
 開発URL：<http://localhost:3000/>
