@@ -35,4 +35,4 @@ date: "2021-05-05"
 
 LightHouseによる計測：
 
-![feap](/images/light-house/light-house.webp)
+![light-house2021-05-05](/images/light-house/light-house2021-05-05.webp)
