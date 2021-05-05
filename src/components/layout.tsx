@@ -12,7 +12,7 @@ export const siteTitle = 'SARDONYXのブログ'
 export default function Layout({
   children,
   home,
-  about=false,
+  about = false,
 }: {
   children: React.ReactNode
   home?: boolean
@@ -38,7 +38,7 @@ export default function Layout({
             <>
               <Image
                 priority
-                src='/images/profile.webp'
+                src='/images/jpg/profile.jpg'
                 className={utilStyles.borderCircle}
                 height={144}
                 width={144}
@@ -52,7 +52,7 @@ export default function Layout({
                 <a>
                   <Image
                     priority
-                    src='/images/profile.webp'
+                    src='/images/jpg/profile.jpg'
                     className={utilStyles.borderCircle}
                     height={108}
                     width={108}

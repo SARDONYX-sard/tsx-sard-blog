@@ -17,15 +17,18 @@ date: "2021-05-05"
 
 <br/>
 
-| ホーム画像名          | jpgサイズ | webpサイズ | 圧縮率（小数第2位でround） |
-| :-------------- | -----: | ------: | ---------------: |
-| daffodils       | 324 KB |  110 KB |              30% |
-| kissingSpring   | 874 KB |  537 KB |              61% |
-| orangeFlower    | 421 KB | 73.7 KB |              18% |
-| springFlower    | 532 KB |  566 KB |             106% |
-| threeCuteChicks | 333 KB |  124 KB |              37% |
+例：324KBのjpgがその30%の110KBに圧縮された。
+
+|      ホーム画像名     | jpgサイズ | webpサイズ |  圧縮率 |
+| :-------------: | -----: | ------: | :--: |
+|    daffodils    | 324 KB |  110 KB |  30% |
+|  kissingSpring  | 874 KB |  537 KB |  61% |
+|   orangeFlower  | 421 KB | 73.7 KB |  18% |
+|   springFlower  | 532 KB |  566 KB | 106% |
+| threeCuteChicks | 333 KB |  124 KB |  37% |
 
 <br/>
 
 1つの画像だけサイズが微増したこと以外は、大幅に圧縮がなされる結果となった。
+
 画像を保存するときWebpだと少々使いづらいのでその辺はまた調整する必要があるけれど、読み込みの速さを考慮すればWebpの選択肢は大いにあると思う。

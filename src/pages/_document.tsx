@@ -24,6 +24,12 @@ export default class MyDocument extends Document {
             </>
           )}
 
+          <link rel='preconnect' href='https://fonts.gstatic.com'></link>
+          <link
+            href='https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap'
+            rel='stylesheet'
+          ></link>
+
           <link
             href='https://fonts.googleapis.com/css?family=Noto+Serif+JP:400,700&display=swap&subset=japanese'
             rel='stylesheet'

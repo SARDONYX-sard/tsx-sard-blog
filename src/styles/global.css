@@ -1,7 +1,6 @@
 html,
 body {
-  font-family: '游明朝体', 'Yu Mincho', "Noto Serif JP", 'ヒラギノ明朝 Pro', 'Hiragino Mincho Pro',
-    'MS P明朝', 'MS PMincho', serif;
+  font-family: 'Yu Mincho', 'Hiragino Mincho Pro', 'Sawarabi Mincho', serif;
   line-height: 1.6;
   font-size: 18px;
   /* background-color: #fff8ef; */
@@ -50,8 +49,22 @@ code {
   overflow-x: scroll;
 }
 
-th {
-  background-color: rgb(151, 190, 182);
+table {
+  width: 100%;
+}
+
+table th {
+  text-align: center;
+  padding: 0.5rem;
+  background-color: rgb(53, 145, 137);
+  box-shadow: 0px -0.5px 0px 0.5px #eee inset;
+}
+
+table td {
+  text-align: ;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  box-shadow: 0px -0.5px 0px 0.5px #eee inset;
 }
 
 h1 {
