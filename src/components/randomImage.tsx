@@ -21,7 +21,7 @@ export default function RandomImg({ siteTitle }: { siteTitle: string }) {
       <style jsx>
         {`
           .${index.title}::before {
-            background-image: url(/images/${imgs[ind]}.jpg);
+            background-image: url(/images/${imgs[ind]}.webp);
           }
         `}
       </style>
