@@ -1,39 +1,39 @@
-import Head from 'next/head'
-import { siteTitle } from '../components/layout'
-import utilStyles from '../styles/utils.module.css'
-import index from '../styles/index.module.css'
-import { getSortedPostsData } from '../lib/posts'
-import Link from 'next/link'
-import Date from '../components/date'
-import { GetStaticProps } from 'next'
+import Head from 'next/head';
+import { siteTitle } from '../components/layout';
+import utilStyles from '../styles/utils.module.css';
+import index from '../styles/index.module.css';
+import { getSortedPostsData } from '../lib/posts';
+import Link from 'next/link';
+import Date from '../components/date';
+import { GetStaticProps } from 'next';
 
-import RandomImg from '../components/randomImage'
-import Footer from '../components/footer'
+import RandomImg from '../components/randomImage';
+import Footer from '../components/footer';
 
-export default function Home({
-  allPostsData,
-}: {
+type AllPostsData = {
   allPostsData: {
-    date: string
-    title: string
-    id: string
-  }[]
-}) {
+    date: string;
+    title: string;
+    id: string;
+  }[];
+};
+
+export default function Home({ allPostsData }: AllPostsData) {
   return (
     <>
       <Head>
         <title>{siteTitle}</title>
 
-        <link rel='icon' href='/favicon.ico' />
-        <meta name='description' content='Learn how to build a personal website using Next.js' />
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content="Learn how to build a personal website using Next.js" />
         <meta
-          property='og:image'
+          property="og:image"
           content={`https://og-image.vercel.app/${encodeURI(
             siteTitle
           )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.zeit.co%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
         />
-        <meta name='og:title' content={siteTitle} />
-        <meta name='twitter:card' content='summary_large_image' />
+        <meta name="og:title" content={siteTitle} />
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
       <div className={index.container}>
@@ -61,14 +61,14 @@ export default function Home({
 
       <Footer isHome={true} isAbout={false} />
     </>
-  )
+  );
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const allPostsData = getSortedPostsData()
+  const allPostsData = getSortedPostsData();
   return {
     props: {
       allPostsData,
     },
-  }
-}
+  };
+};

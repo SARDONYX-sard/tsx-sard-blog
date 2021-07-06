@@ -1,20 +1,20 @@
-import { useState, useEffect } from 'react'
-import index from '../styles/index.module.css'
+import { useState, useEffect } from 'react';
+import index from '../styles/index.module.css';
 
 function getRandomInt(max: number): number {
-  return Math.floor(Math.random() * max)
+  return Math.floor(Math.random() * max);
 }
 
 export default function RandomImg({ siteTitle }: { siteTitle: string }) {
-  const imgs = ['daffodils', 'kissingSpring', 'springFlower', 'orangeFlower', 'threeCuteChicks']
+  const imgs = ['daffodils', 'kissingSpring', 'springFlower', 'orangeFlower', 'threeCuteChicks'];
 
-  const [ind, setInd] = useState(0)
+  const [ind, setInd] = useState(0);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      setInd(getRandomInt(imgs.length))
+      setInd(getRandomInt(imgs.length));
     }
-  }, [])
+  }, []);
   // console.log(imgs[ind])
   return (
     <>
@@ -31,5 +31,5 @@ export default function RandomImg({ siteTitle }: { siteTitle: string }) {
         <p>学んだ技術や知識をまとめておく場所</p>
       </header>
     </>
-  )
+  );
 }

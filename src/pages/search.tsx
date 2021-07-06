@@ -27,7 +27,7 @@ export default function Home({
       setSelectPostsData(allPostsData)
     } else {
       setSelectPostsData(
-        allPostsData.filter(({ id, date, title }) => {
+        allPostsData.filter(({ date, title }) => {
           return date.match(reg) || title.match(reg)
         })
       )
