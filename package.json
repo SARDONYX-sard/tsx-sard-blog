@@ -31,7 +31,7 @@
     "flexsearch": "0.7.2",
     "fs": "0.0.1-security",
     "glob": "7.1.7",
-    "kuromojin": "2.1.1",
+    "kuromojin": "3.0.0",
     "remark-highlight.js": "6.0.0",
     "strip-markdown": "4.0.0",
     "typescript": "3.9.10"
