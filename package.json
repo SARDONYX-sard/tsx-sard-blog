@@ -25,10 +25,10 @@
     "remark-html": "13.0.1"
   },
   "devDependencies": {
-    "@types/node": "14.17.5",
+    "@types/node": "14.17.6",
     "@types/react": "17.0.15",
     "babel-plugin-styled-components": "1.13.2",
-    "flexsearch": "0.7.2",
+    "flexsearch": "0.7.21",
     "fs": "0.0.1-security",
     "glob": "7.1.7",
     "kuromojin": "3.0.0",
