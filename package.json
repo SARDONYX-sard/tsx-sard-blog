@@ -25,8 +25,8 @@
     "remark-html": "13.0.1"
   },
   "devDependencies": {
-    "@types/node": "14.17.9",
-    "@types/react": "17.0.17",
+    "@types/node": "14.17.10",
+    "@types/react": "17.0.19",
     "babel-plugin-styled-components": "1.13.2",
     "flexsearch": "0.7.21",
     "fs": "0.0.1-security",
